@@ -4,7 +4,7 @@ import {Link, graphql} from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const BlogPage = ({data}) => (
+const BlogPage = ({ data }) => (
     <Layout>
         <SEO title="Blog" />
         <h1>Blog</h1>
@@ -24,12 +24,19 @@ export default BlogPage
 
 export const query = graphql`
     query {
-        allWordpressPost(sort: { fields: [date], order: DESC }) {
+        allWordpressPost(
+            filter: {categories: {elemMatch: {name: {eq: "Blog"}}}},
+            sort: { fields: [date], order: DESC}
+            ) 
+        {
             edges {
                 node {
                     title
                     excerpt
                     slug
+                    categories {
+                        name 
+                    }
                 }
             }
         }
