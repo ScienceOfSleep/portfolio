@@ -1,3 +1,76 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+.mainGrid{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 55px 1fr 1fr;
+  grid-template-rows: 55px 1fr 1fr 1fr 1fr;
+  background-color: ghostwhite;
+}
+.navDiv{
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row: 1;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 30px;
+}
+.hero{
+  grid-row-start: 1;
+  grid-row-end: 6;
+  grid-column: 2;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+.logo{
+  grid-column: 3;
+  grid-row: 1;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+.title{
+  grid-column: 1;
+  grid-row: 4/6;
+  color: cornsilk;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 2.5em;
+  overflow: hidden;
+  max-height: calc((100vh - 55px) / 2);
+}
+.subtitle{
+  grid-column: 1;
+  grid-row: 3;
+  color: cornsilk;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 3em;
+  overflow: hidden;
+  max-height: calc((100vh - 55px) / 4);
+}
+.contentOne{
+  grid-column: 4/6;
+  grid-row: 3;
+  padding-right: 20px;
+}
+.contentTwo{
+  grid-column: 4/6;
+  grid-row: 4;
+  padding-right: 20px;
+}
+.blogContent{
+  padding-right: 20px;
+  padding-top: 110px;
+  grid-column: 4/6;
+  grid-row: 2/6;
+}
+.leftBarA{
+  grid-column: 1;
+  grid-row: 1/3;
+  overflow: hidden;
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -62,7 +135,7 @@ dfn {
 }
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0;
 }
 mark {
   background-color: #ff0;
@@ -228,13 +301,13 @@ h1 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  /*margin-bottom: 1.45rem;*/
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
+  /*font-size: 2.25rem;*/
   line-height: 1.1;
 }
 h2 {
@@ -245,13 +318,13 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  /*margin-bottom: 1.45rem;*/
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
+  /*font-size: 1.62671rem;*/
   line-height: 1.1;
 }
 h3 {
@@ -262,7 +335,7 @@ h3 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -279,7 +352,7 @@ h4 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -340,7 +413,7 @@ ul {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
   list-style-position: outside;
   list-style-image: none;
 }
@@ -384,7 +457,8 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
+  font-family: "Lato", serif;
 }
 figure {
   margin-left: 0;

@@ -20,17 +20,8 @@ const ListLink = props => (
 )
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-        background: 'white',
-    }}
-  >
-    <div
-      style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-      }}
-    >
+  <header>
+    <div>
         <img src={JSFramedWhite} alt={"JS Logo"} style={{
             width: '50px',
             marginLeft: `1.45rem`,
@@ -52,11 +43,6 @@ const Header = ({ siteTitle }) => (
             </ul>
         </h2>
     </div>
-      <img src={Calgary}
-           alt={"Calgary header image"}
-           style={{
-           }}
-      />
   </header>
 )
 
