@@ -36,7 +36,12 @@ const IndexPage = ({ data }) => (
         {/*Row 1-6 Col 2*/}
         <div className={'hero'}>
             <Img
-            fluid={data.file.childImageSharp.fluid}
+            fluid={[data.mobileImage.childImageSharp.fluid,
+            {
+                ...data.desktopImage.childImageSharp.fluid,
+                media: `(min-width: 1024px)`,
+            },
+            ]}
             alt=""
             />
         </div>
@@ -65,10 +70,17 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
     query {
-        file(relativePath: { eq: "alec-favale-elk-unsplash-destop.png" }) {
+        mobileImage: file(relativePath: { eq: "brian-holdsworth-elklandscape-p-tablet-unsplash.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 768) {
+                    ...GatsbyImageSharpFluid_withWebp
+                }
+            }
+        }
+        desktopImage: file(relativePath: { eq: "alec-favale-elk-unsplash-destop.png" }) {
             childImageSharp {
                 fluid(maxWidth: 746 maxHeight: 950) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }

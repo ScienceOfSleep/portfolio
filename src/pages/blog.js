@@ -37,25 +37,19 @@ const BlogPage = ({ data }) => (
             {/*Row 1-6 Col 2*/}
             <div className={'hero'}>
                 <Img
-                    fluid={data.file.childImageSharp.fluid}
+                    fluid={[data.mobileImage.childImageSharp.fluid,
+                        {
+                            ...data.desktopImage.childImageSharp.fluid,
+                            media: `(min-width: 768px)`,
+                        },
+                    ]}
                     alt=""
                 />
             </div>
 
             {/*Row 3-6 Col 4-6*/}
-            <div className={'blogContent'}>
-                <h4>What & Why</h4>
-                <br/>
-
-                <p><i>"Not that the work I do is all that important or memorable, but I prefer to think of it as ‘writing’
-                    rather than as ‘content.’ And for me, that’s an important distinction. Content and writing are not the same thing,
-                    at least the way that we’ve come to define them in contemporary society. Content is inherently transactional;
-                    its goal is to drive towards some kind of conversion, some kind of exchange of value.
-                    This is why platforms just think of it all as ‘content’; for the most part, they’re indifferent to
-                    whether it’s good or bad writing, or even if it’s writing at all. It doesn’t matter whether it has any kind of inherent worth,
-                    whether it’s video or animated GIFs or whatever— so long as it’s driving clicks, time spent, purchases, etc.
-                    <br/><br/>
-                    Again, I’m not suggesting that what I do has any superior worth at all, but what I will say is that
+            <div className={'contentTwo'}>
+                <p><i>"I’m not suggesting that what I do has any superior worth at all, but what I will say is that
                     the difference between content that lives on a centralized blogging platform and what I do on a site
                     that I own and operate myself—where I don’t answer to anyone else but me—is that my writing on Subtraction.com
                     has a high tolerance for ambiguity. It’s generally about design and technology,
@@ -64,8 +58,10 @@ const BlogPage = ({ data }) => (
                     That’s actually increasingly rare in our digital world now, and I personally value that a lot."</i>
                 </p>
                 <h4>-Khoi Vinh, 2019</h4>
-                <br/>
+            </div>
 
+            <div className={'contentOne'}>
+                <h4>What & Why</h4>
                 <p>I've always been against writing and maintaining a professional blog. Life didn't take me
                     down the path of a copywriter, so when necessary I have always preferred to contract this part out to
                     someone with a passion for it. The post above changed my mind on the topic, and really opened my eyes
@@ -91,10 +87,17 @@ export default BlogPage
 
 export const query = graphql`
     query {
-        file(relativePath: { eq: "brandon-erlinger-ford-ETS-unsplash.png" }) {
+        mobileImage: file(relativePath: { eq: "photo-powder-tabletp-b9d4d9483d9b.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 768) {
+                    ...GatsbyImageSharpFluid_withWebp
+                }
+            }
+        }
+        desktopImage: file(relativePath: { eq: "alexandra-luniel-gondola-unsplash.png" }) {
             childImageSharp {
                 fluid(maxWidth: 746 maxHeight: 950) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }

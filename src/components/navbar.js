@@ -18,17 +18,19 @@ const ListLink = props => (
 )
 
 const NavBar = () => (
-    <h3 style={{
+    <div style={{
         display:'flex',
         justifyContent:'flex-end',
-        }}>
-        <ul>
-            <ListLink to="/">Home</ListLink>
-            <ListLink to="/projects">Projects</ListLink>
-            <ListLink to="/blog">Blog</ListLink>
-            <ListLink to="/contact">Contact</ListLink>
-        </ul>
-    </h3>
+    }}>
+        <h3>
+            <ul>
+                <ListLink to="/">Home</ListLink>
+                <ListLink to="/projects">Projects</ListLink>
+                <ListLink to="/blog">Blog</ListLink>
+                <ListLink to="/contact">Contact</ListLink>
+            </ul>
+        </h3>
+    </div>
 )
 
 export default NavBar

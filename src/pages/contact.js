@@ -36,7 +36,12 @@ const ContactPage = ({ data }) => (
             {/*Row 1-6 Col 2*/}
             <div className={'hero'}>
                 <Img
-                    fluid={data.file.childImageSharp.fluid}
+                    fluid={[data.mobileImage.childImageSharp.fluid,
+                        {
+                            ...data.desktopImage.childImageSharp.fluid,
+                            media: `(min-width: 768px)`,
+                        },
+                    ]}
                     alt=""
                 />
             </div>
@@ -65,10 +70,17 @@ export default ContactPage
 
 export const query = graphql`
     query {
-        file(relativePath: { eq: "jason-leung-couch-unsplash.png" }) {
+        mobileImage: file(relativePath: { eq: "alberto-tolentino-calgary-tabletp-unsplash.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 768) {
+                    ...GatsbyImageSharpFluid_withWebp
+                }
+            }
+        }
+        desktopImage: file(relativePath: { eq: "brandon-erlinger-ford-ETS-unsplash.png" }) {
             childImageSharp {
                 fluid(maxWidth: 746 maxHeight: 950) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }

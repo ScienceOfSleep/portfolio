@@ -37,7 +37,12 @@ const ProjectsPage = ({ data }) => (
             {/*Row 1-6 Col 2*/}
             <div className={'hero'}>
                 <Img
-                    fluid={data.file.childImageSharp.fluid}
+                    fluid={[data.mobileImage.childImageSharp.fluid,
+                        {
+                            ...data.desktopImage.childImageSharp.fluid,
+                            media: `(min-width: 768px)`,
+                        },
+                    ]}
                     alt=""
                 />
             </div>
@@ -69,13 +74,20 @@ export default ProjectsPage
 
 export const query = graphql`
     query {
-        file(relativePath: { eq: "toni-reed-bluejay-unsplash-desktop.png" }) {
-        childImageSharp {
-            fluid(maxWidth: 746 maxHeight: 950) {
-                ...GatsbyImageSharpFluid
+        mobileImage: file(relativePath: { eq: "erik-mclean-pumokin-tabletp-unsplash.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 768) {
+                    ...GatsbyImageSharpFluid_withWebp
+                }
             }
         }
-    }
+        desktopImage: file(relativePath: { eq: "toni-reed-bluejay-unsplash-desktop.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 746 maxHeight: 950) {
+                    ...GatsbyImageSharpFluid_withWebp
+                }
+            }
+        }
 
         allWordpressPost(
             filter: {categories: {elemMatch: {name: {eq: "Projects"}}}},
