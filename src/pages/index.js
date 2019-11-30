@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => (
         {/*Row 4 Col 1*/}
         <div className={'title'}
              style={{backgroundColor: '#1C1718'}}>
-            <h1>By Josh Steele</h1>
+            <h1><b>By Josh Steele</b></h1>
         </div>
 
         {/*Row 1-6 Col 2*/}

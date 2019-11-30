@@ -37,12 +37,7 @@ const ProjectsPage = ({ data }) => (
             {/*Row 1-6 Col 2*/}
             <div className={'hero'}>
                 <Img
-                    fluid={[data.mobileImage.childImageSharp.fluid,
-                        {
-                            ...data.desktopImage.childImageSharp.fluid,
-                            media: `(min-width: 768px)`,
-                        },
-                    ]}
+                    fluid={data.desktopImage.childImageSharp.fluid}
                     alt=""
                 />
             </div>
@@ -59,14 +54,18 @@ const ProjectsPage = ({ data }) => (
 
             <div className={'leftBarA'} style={{backgroundColor: '#1C1718'}}></div>
         </section>
-        {data.allWordpressPost.edges.map(({ node }) => (
-            <div key={node.id}>
-                <Link to={node.slug}>
-                    <h4>{node.title}</h4>
-                    <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                </Link>
-            </div>
-        ))}
+        <div className={'posts'}>
+            {data.allWordpressPost.edges.map(({ node }) => (
+                <div key={node.id}>
+                    <Link to={node.slug}>
+                        <div className={'contentCard'}>
+                            <h4 className={'contentCardTitle'}>{node.title}</h4>
+                            <div className={'contentCardExcerpt'} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                        </div>
+                    </Link>
+                </div>
+            ))}
+        </div>
     </Layout>
 )
 
