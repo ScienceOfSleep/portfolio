@@ -44,12 +44,20 @@ const ProjectsPage = ({ data }) => (
 
             {/*Row 3 Col 4-6*/}
             <div className={'contentOne'}>
-                <p>Welcome to my portfolio site.</p>
+                <h4>Welcome to my portfolio site.</h4>
+                <p>Working with the WordPress API, these project posts and blog posts are
+                read from an external site then sorted and formatted into a modern web
+                framework with all the bells and whistles that you would expect from such an
+                upgrade.</p>
             </div>
 
             {/*Row 4 Col 4-6*/}
             <div className={'contentTwo'}>
-                <p>I design and build cool stuff.</p>
+                <p>The project posts below serve three purposes for me. First as an extended Readme
+                    and documentation of the development process. Second as a catalogue for
+                    concepts and next-steps to refine projects. Third, they let me practice
+                    breaking down abstract or complex programming concepts into a story that
+                    is understandable or at least relatable to a layperson.</p>
             </div>
 
             <div className={'leftBarA'} style={{backgroundColor: '#1C1718'}}></div>

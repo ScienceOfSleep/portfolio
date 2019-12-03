@@ -38,6 +38,9 @@ html{
   padding-left: 5px;
   grid-area: contentOne;
 }
+.contentOne > p, .contentTwo > p{
+  padding-top: .5rem;
+}
 .contentTwo{
   padding-top: 1rem;
   padding-right: 5px;
@@ -144,11 +147,14 @@ html{
   .title{
     font-size: 5em;
     overflow: hidden;
+    padding-left: 1rem;
     /*max-height: calc((100vh - 55px) / 2);*/
   }
   .subtitle{
     font-size: 3em;
     overflow: hidden;
+    padding-left: 1rem;
+    padding-top: 0;
     /*max-height: calc((100vh - 55px) / 4);*/
   }
   .contentOne{

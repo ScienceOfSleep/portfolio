@@ -57,10 +57,10 @@ const IndexPage = ({ data }) => (
         {/*Row 4 Col 4-6*/}
         <div className={'contentTwo'}>
             <h4>Who am I?</h4>
-            <p>Today’s job market is always changing, and the successful professional is always adapting to meet these shifting demands.
-                I bring an open mind and a desire to learn to every project that I have the privilege to be assigned;
-                this combined with my unrelenting focus on clear communication and quantifiable results make me an ideal candidate
-                for a field where constant personal growth is required to remain competitive.</p>
+            <p>Currently based out of Calgary, Ab. I design websites and apps in cutting edge tech stacks for small
+                to medium sized businesses. On the front end I design React components and place them in a responsive
+                CSS grid. Gatsby handles the back-end for CMS and simple API work, while I work with Laravel for
+                more complex projects.</p>
         </div>
 
         <div className={'leftBarA'} style={{backgroundColor: '#1C1718'}}></div>
