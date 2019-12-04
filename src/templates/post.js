@@ -33,6 +33,7 @@ export default ({ data }) => {
                     <div className={'logo'}>
                         <Logo/>
                     </div>
+                    <div className={'leftBarA'} style={{backgroundColor: '#1C1718'}}></div>
                 </div>
             )}
         </Layout>
