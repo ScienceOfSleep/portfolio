@@ -61,7 +61,7 @@ const ContactPage = ({ data }) => (
                 </ul>
             </div>
 
-            <div className={'leftBarA'} style={{backgroundColor: '#1C1718'}}></div>
+            <div className={'darkBar'}></div>
         </section>
     </Layout>
 )

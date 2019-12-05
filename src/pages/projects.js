@@ -23,14 +23,12 @@ const ProjectsPage = ({ data }) => (
             </div>
 
             {/*Row 3 Col 1*/}
-            <div className={'subtitle'}
-                 style={{backgroundColor: '#1C1718'}}>
+            <div className={'subtitle'}>
                 <h2>Tech Project Portfolio</h2>
             </div>
 
             {/*Row 4 Col 1*/}
-            <div className={'title'}
-                 style={{backgroundColor: '#1C1718'}}>
+            <div className={'title'}>
                 <h1>Josh Steele</h1>
             </div>
 
@@ -60,20 +58,27 @@ const ProjectsPage = ({ data }) => (
                     is understandable or at least relatable to a layperson.</p>
             </div>
 
-            <div className={'leftBarA'} style={{backgroundColor: '#1C1718'}}></div>
+            <div className={'darkBar'}></div>
         </section>
-        <div className={'posts'}>
-            {data.allWordpressPost.edges.map(({ node }) => (
-                <div key={node.id}>
-                    <Link to={node.slug}>
-                        <div className={'contentCard'}>
-                            <h4 className={'contentCardTitle'}>{node.title}</h4>
-                            <div className={'contentCardExcerpt'} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+        <section className={'postsGrid'}>
+            <div className={'postsHeading'}>
+                <h3><u>Project Posts</u></h3>
+            </div>
+            <div className={'postsContainer'}>
+                <div className={'posts'}>
+                    {data.allWordpressPost.edges.map(({ node }) => (
+                        <div key={node.id}>
+                            <Link to={node.slug}>
+                                <div className={'contentCard'}>
+                                    <h4 className={'contentCardTitle'}>{node.title}</h4>
+                                    <div className={'contentCardExcerpt'} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                                </div>
+                            </Link>
                         </div>
-                    </Link>
+                    ))}
                 </div>
-            ))}
-        </div>
+            </div>
+        </section>
     </Layout>
 )
 

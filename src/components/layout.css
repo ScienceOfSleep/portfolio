@@ -3,8 +3,16 @@
 @tailwind components;
 
 @tailwind utilities;
+:root{
+  --main-bg-color: #ECEDED;
+  --light-text: #FFFFFF;
+  --title-bg-color: #1C1718;
+  --elevated-bg-color: #FFFFFF;
+  --shadow-color: #A8AFB5;
+  --border-color: #633900;
+}
 html{
-  background-color: ghostwhite;
+  background-color: var(--main-bg-color);
 }
 .navDiv{
   padding-top: .5rem;
@@ -18,17 +26,19 @@ html{
   max-width: 50px;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  box-shadow: 3px 3px;
+  box-shadow: var(--shadow-color) 3px 3px;
 }
 .title{
   grid-area: title;
-  color: cornsilk;
+  color: var(--light-text);
+  background-color: var(--title-bg-color);
   padding: 15px;
   font-size: 2rem;
 }
 .subtitle{
   grid-area: subtitle;
-  color: cornsilk;
+  color: var(--light-text);
+  background-color: var(--title-bg-color);
   padding: 15px;
   font-size: 2rem;
 }
@@ -50,11 +60,12 @@ html{
 .blogContent{
   grid-area: blogContent;
 }
-.leftBarA{
+.darkBar{
   grid-area: leftBarA;
+  background-color: var(--title-bg-color);
 }
 .mainGrid{
-  background-color: ghostwhite;
+  background-color: var(--main-bg-color);
 }
 .mainGrid{
   display: grid;
@@ -68,6 +79,22 @@ html{
     "contentTwo contentTwo contentTwo"
     ". logo .";
 }
+.postsHeading{
+  grid-area: postsHeading;
+  padding-top: 30px;
+}
+.postsContainer{
+  grid-area: posts;
+}
+.postsGrid{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 80px auto;
+  background-color: var(--main-bg-color);
+  grid-template-areas:
+          ". postsHeading ."
+          "posts posts posts";
+}
 .contentCardTitle{
   grid-area: cardTitle;
 }
@@ -77,7 +104,9 @@ html{
 .contentCard{
   margin: 2em;
   padding: 10px;
-  border: 2px solid #444;
+  border: 2px solid var(--border-color);
+  background-color: var(--elevated-bg-color);
+  box-shadow: var(--shadow-color) 3px 3px;
   display: grid;
   grid-template-areas:
     "cardTitle"

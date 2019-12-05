@@ -22,26 +22,19 @@ const IndexPage = ({ data }) => (
         </div>
 
         {/*Row 3 Col 1*/}
-        <div className={'subtitle'}
-             style={{backgroundColor: '#1C1718'}}>
+        <div className={'subtitle'}>
             <h2>Albertan Web Design</h2>
         </div>
 
         {/*Row 4 Col 1*/}
-        <div className={'title'}
-             style={{backgroundColor: '#1C1718'}}>
+        <div className={'title'}>
             <h1><b>By Josh Steele</b></h1>
         </div>
 
         {/*Row 1-6 Col 2*/}
         <div className={'hero'}>
             <Img
-            fluid={[data.mobileImage.childImageSharp.fluid,
-            {
-                ...data.desktopImage.childImageSharp.fluid,
-                media: `(min-width: 1024px)`,
-            },
-            ]}
+            fluid={[data.desktopImage.childImageSharp.fluid]}
             alt=""
             />
         </div>
@@ -63,7 +56,7 @@ const IndexPage = ({ data }) => (
                 more complex projects.</p>
         </div>
 
-        <div className={'leftBarA'} style={{backgroundColor: '#1C1718'}}></div>
+        <div className={'darkBar'}></div>
     </section>
   </Layout>
 )

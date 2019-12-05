@@ -70,20 +70,27 @@ const BlogPage = ({ data }) => (
                 </p>
             </div>
 
-            <div className={'leftBarA'} style={{backgroundColor: '#1C1718'}}></div>
+            <div className={'darkBar'}></div>
         </section>
-        <div className={'posts'}>
-            {data.allWordpressPost.edges.map(({ node }) => (
-                <div key={node.id}>
-                    <Link to={node.slug}>
-                        <div className={'contentCard'}>
-                            <h4 className={'contentCardTitle'}>{node.title}</h4>
-                            <div className={'contentCardExcerpt'} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+        <section className={'postsGrid'}>
+            <div className={'postsHeading'}>
+                <h3><u>Blog Posts</u></h3>
+            </div>
+            <div className={'postsContainer'}>
+                <div className={'posts'}>
+                    {data.allWordpressPost.edges.map(({ node }) => (
+                        <div key={node.id}>
+                            <Link to={node.slug}>
+                                <div className={'contentCard'}>
+                                    <h4 className={'contentCardTitle'}>{node.title}</h4>
+                                    <div className={'contentCardExcerpt'} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                                </div>
+                            </Link>
                         </div>
-                    </Link>
+                    ))}
                 </div>
-            ))}
-        </div>
+            </div>
+        </section>
     </Layout>
 )
 
