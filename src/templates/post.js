@@ -15,12 +15,10 @@ export default ({ data }) => {
                     <div className={'navDiv'}>
                         <NavBar/>
                     </div>
-                    <h1 className={'subtitle'}
-                        style={{backgroundColor: '#1C1718'}}>
+                    <h1 className={'subtitle'}>
                         {node.title}
                     </h1>
-                    <h2 className={'title'}
-                        style={{backgroundColor: '#1C1718'}}>
+                    <h2 className={'title'}>
                         By Josh Steele
                     </h2>
                     <div className={'hero'}>
@@ -29,11 +27,11 @@ export default ({ data }) => {
                             alt=""
                         />
                     </div>
-                    <div className={'contentTwo'} dangerouslySetInnerHTML={{ __html: node.content }} />
+                    <div className={'blogContent'} dangerouslySetInnerHTML={{ __html: node.content }} />
                     <div className={'logo'}>
                         <Logo/>
                     </div>
-                    <div className={'leftBarA'} style={{backgroundColor: '#1C1718'}}></div>
+                    <div className={'darkBar'}></div>
                 </div>
             )}
         </Layout>

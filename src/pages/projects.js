@@ -29,7 +29,7 @@ const ProjectsPage = ({ data }) => (
 
             {/*Row 4 Col 1*/}
             <div className={'title'}>
-                <h1>Josh Steele</h1>
+                <h1>By Josh Steele</h1>
             </div>
 
             {/*Row 1-6 Col 2*/}
