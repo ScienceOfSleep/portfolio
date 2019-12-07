@@ -62,17 +62,25 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `portfolio-josh-steele`,
+        short_name: `jjsteele`,
+        description: `A collection of my projects and ideas`,
+        lang: `en`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        background_color: `#633900`,
+        theme_color: `#633900`,
+        display: `standalone`,
         icon: `src/images/JSFramed.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/projects/`, `/blog/`, `/contact/`],
+        appendScript: require.resolve(`./src/custom-sw-code.js`),
+      },
+    },
   ],
 }
