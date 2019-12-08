@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const ListLink = props => (
     <li style={{
         display: `inline-block`,
-        marginRight: `1rem`,
+        marginLeft: `1rem`,
     }}>
         <Link to={props.to} style={{
             margin: 0,

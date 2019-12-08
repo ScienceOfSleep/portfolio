@@ -164,8 +164,8 @@ html{
 @media only screen and (min-width: 64.063em) {
   .mainGrid{
     display: grid;
-    grid-template-columns: 1fr 2fr 55px 1fr 1fr;
-    grid-template-rows: 55px 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 80px 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr 1fr 1fr;
     grid-template-areas:
       "leftBarA hero logo navDiv navDiv"
       "leftBarA hero . . ."
@@ -173,33 +173,39 @@ html{
       "title hero . contentTwo contentTwo"
       "title hero . contentTwo contentTwo";
   }
-  .navDiv{
-    font-family: "Source Sans Pro", sans-serif;
-    margin-top: 30px;
-  }
   .hero{}
   .logo{
-    margin-left: 5px;
-    margin-top: 5px;
+    max-width: 65px;
+    margin-left: 20px;
+    margin-right: 0;
+    margin-top: 10px;
+    padding-top: 5px;
+    box-shadow: var(--shadow-color) -5px 5px 2px -2px;
   }
   .title{
     font-size: 5em;
     overflow: hidden;
     padding-left: 1rem;
-    /*max-height: calc((100vh - 55px) / 2);*/
+  }
+  .navDiv{
+    font-family: "Source Sans Pro", sans-serif;
+    margin-top: 40px;
+    padding-right: 4vw;
+ }
+  .navDiv a{
+    font-size: 1.70rem;
   }
   .subtitle{
     font-size: 3em;
     overflow: hidden;
     padding-left: 1rem;
     padding-top: 0;
-    /*max-height: calc((100vh - 55px) / 4);*/
   }
   .contentOne{
-    padding-right: 20px;
+    padding-right: 4vw;
   }
   .contentTwo{
-    padding-right: 20px;
+    padding-right: 4vw;
   }
   .blogContent{
     padding: 0;
@@ -492,7 +498,7 @@ h3 {
 h4 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: .5rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;

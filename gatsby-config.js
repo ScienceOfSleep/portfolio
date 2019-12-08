@@ -67,8 +67,8 @@ module.exports = {
         description: `A collection of my projects and ideas`,
         lang: `en`,
         start_url: `/`,
-        background_color: `#633900`,
-        theme_color: `#633900`,
+        background_color: `#ECEDED`,
+        theme_color: `#1C1718`,
         display: `standalone`,
         icon: `src/images/JSFramed.png`, // This path is relative to the root of the site.
       },
