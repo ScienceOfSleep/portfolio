@@ -27,7 +27,7 @@ export default ({ data }) => {
                             alt=""
                         />
                     </div>
-                    <div className={'blogContent'} dangerouslySetInnerHTML={{ __html: node.content }} />
+                    <div className={'longContent'} dangerouslySetInnerHTML={{ __html: node.content }} />
                     <div className={'logo'}>
                         <Logo/>
                     </div>

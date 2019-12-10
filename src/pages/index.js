@@ -40,20 +40,30 @@ const IndexPage = ({ data }) => (
         </div>
 
         {/*Row 3 Col 4-6*/}
-        <div className={'contentOne'}>
-            <h4>Hi.</h4>
-            <p>Welcome to my portfolio site. This is an area where I showcase my work, personality, tastes,
+        <div className={'longContent'}>
+            <h4>Hi. Welcome to my portfolio site.</h4>
+            <p> This is an area where I showcase my work, personality, tastes,
                 and opinions for potential employers, clients, and the occasional interested friend.
-                Keeping this site up to date also serves as an opportunity for reflection and eventually a venue for personal growth </p>
-        </div>
-
-        {/*Row 4 Col 4-6*/}
-        <div className={'contentTwo'}>
-            <h4>Who am I?</h4>
-            <p>Currently based out of Calgary, Ab. I design websites and apps in cutting edge tech stacks for small
+                Keeping this site up to date also serves as an opportunity for reflection and eventually a venue for personal growth
+            </p>
+            <p>
+                Currently based out of Calgary, Ab. I design websites and apps in cutting edge tech stacks for small
                 to medium sized businesses. On the front end I design React components and place them in a responsive
                 CSS grid. Gatsby handles the back-end for CMS and simple API work, while I work with Laravel for
-                more complex projects.</p>
+                more complex projects.
+            </p>
+        {/*</div>*/}
+
+        {/*/!*Row 4 Col 4-6*!/*/}
+        {/*<div className={'contentTwo'}>*/}
+            <h4>The Fastest WordPress in the West</h4>
+            <p>WordPress and its fellows can be a valuable tool for business, but it is an aging technology and the websites
+                it delivers can be very slow. This sluggishness has a significant measurable impact on both exposure and conversions.
+                Extensive market research has shown that pages that take longer than two seconds to load have a 50% bounce rate.
+                Cutting edge technologies and techniques allow me to rebuild and deliver traditional WordPress sites at blazing speeds.
+                Offline functionality, advanced image-processing, and truly responsive design result in a modern Progressive
+                Web App(PWA) that will allow you to fully serve customers on any device and any network, regardless of signal strength.
+            </p>
         </div>
 
         <div className={'darkBar'}></div>

@@ -43,10 +43,16 @@ const ProjectsPage = ({ data }) => (
             {/*Row 3 Col 4-6*/}
             <div className={'contentOne'}>
                 <h4>Welcome to my portfolio site.</h4>
-                <p>Working with the WordPress API, these project posts and blog posts are
-                read from an external site then sorted and formatted into a modern web
-                framework with all the bells and whistles that you would expect from such an
-                upgrade.</p>
+                <p>
+                    Working with the WordPress API, these project posts and blog posts are
+                    read from an external site then sorted and formatted into a modern web
+                    framework with all the bells and whistles that you would expect from such an
+                    upgrade.
+                <br/>
+                    On the front end of my projects I design React components and place them in a responsive
+                    CSS grid. Gatsby handles the back-end for CMS and simple API work, while I work with Laravel for
+                    more complex projects.
+                </p>
             </div>
 
             {/*Row 4 Col 4-6*/}
