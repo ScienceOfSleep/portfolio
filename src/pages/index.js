@@ -57,8 +57,8 @@ const IndexPage = ({ data }) => (
         {/*/!*Row 4 Col 4-6*!/*/}
         {/*<div className={'contentTwo'}>*/}
             <h4>The Fastest WordPress in the West</h4>
-            <p>WordPress and its fellows can be a valuable tool for business, but it is an aging technology and the websites
-                it delivers can be very slow. This sluggishness has a significant measurable impact on both exposure and conversions.
+            <p>WordPress and its fellows can be a valuable tool for business, but it is also an aging technology and the websites
+                it delivers can be very slow if they are poorly designed. This sluggishness has a significant measurable impact on both exposure and conversions.
                 Extensive market research has shown that pages that take longer than two seconds to load have a 50% bounce rate.
                 Cutting edge technologies and techniques allow me to rebuild and deliver traditional WordPress sites at blazing speeds.
                 Offline functionality, advanced image-processing, and truly responsive design result in a modern Progressive
