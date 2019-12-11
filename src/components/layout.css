@@ -166,14 +166,65 @@ html{
 @media only screen and (min-width: 64.063em) {
   .mainGrid{
     display: grid;
+    grid-template-columns: 2fr 4fr 65px 2fr;
+    grid-template-rows: 65px 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "leftBarA hero logo navDiv"
+      "subtitle hero . ."
+      "title hero . contentOne"
+      "title hero . contentTwo"
+      "title hero . contentTwo";
+  }
+  .longContent{
+    padding-right: 2vw;
+    padding-left: 20px;
+    grid-column: 3/5;
+    grid-row: 2/6;
+    text-align: justify;
+  }
+  .logo{
+    max-width: 50px;
+    margin-left: 20px;
+    margin-right: 0;
+    margin-top: 10px;
+    padding-top: 5px;
+    box-shadow: var(--shadow-color) -5px 5px 2px -2px;
+  }
+  .navDiv{
+    margin-top: 3px;
+  }
+  .longContent{
+    font-size: .85rem;
+  }
+  .title{
+    padding-left: 1rem;
+    font-size: 3rem;
+  }
+  .subtitle{
+    padding-left: 1rem;
+    font-size: 3rem;
+  }
+  .hero{
+    background-color: var(--shadow-color);
+  }
+}
+
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1024px and max-width 1440px, use when QAing large screen-only issues */
+
+/* XLarge screens */
+/* min-width 1441px, xlarge screens */
+@media only screen and (min-width: 90.063em) {
+  .mainGrid{
+    display: grid;
     grid-template-columns: 1fr 2fr 80px 1fr 1fr;
     grid-template-rows: 80px 1fr 1fr 1fr 1fr;
     grid-template-areas:
-      "leftBarA hero logo navDiv navDiv"
-      "leftBarA hero . . ."
-      "subtitle hero . contentOne contentOne"
-      "title hero . contentTwo contentTwo"
-      "title hero . contentTwo contentTwo";
+            "leftBarA hero logo navDiv navDiv"
+            "leftBarA hero . . ."
+            "subtitle hero . contentOne contentOne"
+            "title hero . contentTwo contentTwo"
+            "title hero . contentTwo contentTwo";
   }
   .hero{}
   .logo{
@@ -193,14 +244,13 @@ html{
     font-family: "Source Sans Pro", sans-serif;
     margin-top: 40px;
     padding-right: 4vw;
- }
+  }
   .navDiv a{
     font-size: 1.70rem;
   }
   .subtitle{
     font-size: 3em;
     overflow: hidden;
-    padding-left: 1rem;
     padding-top: 0;
   }
   .contentOne{
@@ -217,7 +267,7 @@ html{
     padding-left: 20px;
     grid-column: 4/6;
     grid-row: 2/6;
-    text-align: justify;
+    font-size: 1rem;
   }
   .contentOne > h4, .contentTwo > h4 {
     text-align: right;
@@ -243,8 +293,7 @@ html{
   }
 }
 
-
-@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1024px and max-width 1440px, use when QAing large screen-only issues */
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
 
 html {
   font-family: sans-serif;

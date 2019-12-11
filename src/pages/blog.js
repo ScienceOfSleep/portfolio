@@ -53,7 +53,7 @@ const BlogPage = ({ data }) => (
                 <h4>What & Why</h4>
                 <p>I've always been against writing and maintaining a professional blog. Life didn't take me
                     down the path of a copywriter, so when necessary I have always preferred to contract this part out to
-                    someone with a passion for it. The post above changed my mind on the topic, and really opened my eyes
+                    someone with a passion for it. The post below changed my mind on the topic, and really opened my eyes
                     to the benefits of a personal blog devoted to exploring a loosely connected collection of ideas, feelings,
                     and food recipes. That's the type of content that I'll be curating below.
                 </p>

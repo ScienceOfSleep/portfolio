@@ -62,7 +62,7 @@ const IndexPage = ({ data }) => (
                 Extensive market research has shown that pages that take longer than two seconds to load have a 50% bounce rate.
                 Cutting edge technologies and techniques allow me to rebuild and deliver traditional WordPress sites at blazing speeds.
                 Offline functionality, advanced image-processing, and truly responsive design result in a modern Progressive
-                Web App(PWA) that will allow you to fully serve customers on any device and any network, regardless of signal strength.
+                Web App (PWA) that will allow you to fully serve customers on any device and any network, regardless of signal strength.
             </p>
         </div>
 
