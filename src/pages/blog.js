@@ -12,42 +12,30 @@ const BlogPage = ({ data }) => (
         <SEO title="Blog" />
         <section className={'mainGrid'}>
 
-            {/*Row 1 Col 3*/}
             <div className={'logo'}>
                 <Logo/>
             </div>
 
-            {/*Row 1 Col 4-6*/}
             <div className={'navDiv'}>
                 <NavBar/>
             </div>
 
-            {/*Row 3 Col 1*/}
             <div className={'subtitle'}
                  style={{backgroundColor: '#1C1718'}}>
                 <h2>Blog Page</h2>
             </div>
 
-            {/*Row 4 Col 1*/}
             <div className={'title'}
                  style={{backgroundColor: '#1C1718'}}>
                 <h1>By Josh Steele</h1>
             </div>
 
-            {/*Row 1-6 Col 2*/}
             <div className={'hero'}>
                 <Img
-                    fluid={[data.mobileImage.childImageSharp.fluid,
-                        {
-                            ...data.desktopImage.childImageSharp.fluid,
-                            media: `(min-width: 768px)`,
-                        },
-                    ]}
-                    alt=""
+                    fluid={data.desktopImage.childImageSharp.fluid}
+                    alt="blog page cool activity demo"
                 />
             </div>
-
-            {/*Row 3-6 Col 4-6*/}
 
             <div className={'longContent'}>
                 <h4>What & Why</h4>
@@ -58,8 +46,7 @@ const BlogPage = ({ data }) => (
                     and food recipes. That's the type of content that I'll be curating below.
                 </p>
                 <br/>
-            {/*</div>*/}
-            {/*<div className={'contentTwo'}>*/}
+
                 <p><i>"I’m not suggesting that what I do has any superior worth at all, but what I will say is that
                     the difference between content that lives on a centralized blogging platform and what I do on a site
                     that I own and operate myself—where I don’t answer to anyone else but me—is that my writing on Subtraction.com

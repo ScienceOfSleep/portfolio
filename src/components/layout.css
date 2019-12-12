@@ -14,6 +14,9 @@
 html{
   background-color: var(--main-bg-color);
 }
+
+/*HEADER BLOCKS*/
+
 .navDiv{
   padding-top: .5rem;
   grid-area: navDiv;
@@ -28,6 +31,9 @@ html{
   margin-bottom: 1rem;
   box-shadow: var(--shadow-color) 3px 3px;
 }
+
+/*TITLE BLOCKS*/
+
 .title{
   grid-area: title;
   color: var(--light-text);
@@ -42,6 +48,13 @@ html{
   padding: 15px;
   font-size: 2rem;
 }
+.darkBar{
+  grid-area: leftBarA;
+  background-color: var(--title-bg-color);
+}
+
+/*CONTENT BLOCKS*/
+
 .contentOne{
   padding-top: 1rem;
   padding-right: 5px;
@@ -59,18 +72,41 @@ html{
   grid-area: contentTwo;
   text-align: justify;
 }
+
+/*INDEX AND BLOG CONTENT*/
+
 .longContent{
   grid-area: blogContent;
-}
-.darkBar{
-  grid-area: leftBarA;
-  background-color: var(--title-bg-color);
-}
-.longContent{
   padding: 1rem;
   grid-column: 1/4;
   grid-row: 5/7;
 }
+
+/*CONTACT PAGE*/
+
+.contactContent{
+   padding: 1rem;
+   grid-column: 1/4;
+   grid-row: 5/7;
+ }
+.contactList{
+  margin: 0;
+}
+.icon1, .icon2{
+  display: inline-block;
+  padding-right: 3px;
+  margin: 0;
+}
+.icon1{
+  padding-bottom: 4px;
+}
+.icon2{
+  padding-top: 0;
+  padding-bottom: 6px;
+}
+
+/*MAIN GRID*/
+
 .mainGrid{
   background-color: var(--main-bg-color);
 }
@@ -86,6 +122,9 @@ html{
     "contentTwo contentTwo contentTwo"
     ". logo .";
 }
+
+/*POST CARD INDEX GRID*/
+
 .postsHeading{
   grid-area: postsHeading;
   padding-top: 30px;
@@ -102,6 +141,9 @@ html{
           ". postsHeading ."
           "posts posts posts";
 }
+
+/*CONTENT CARD GRID*/
+
 .contentCardTitle{
   grid-area: cardTitle;
 }
@@ -125,7 +167,12 @@ html{
 
 /*!* Medium screens - TABLET *!*/
 /*!* min-width 641px *!*/
+
 @media only screen and (min-width: 40.063em) {
+
+  /*MAIN GRID*/
+  /*TABLET REFORMAT*/
+
   .mainGrid{
     grid-template-columns: 2fr 1fr 2fr 2fr;
     grid-template-areas:
@@ -136,6 +183,10 @@ html{
       "contentTwo contentTwo contentTwo contentTwo";
   }
   .longContent{
+    grid-column: 1/5;
+    grid-row: 4/6;
+  }
+  .contactContent{
     grid-column: 1/5;
     grid-row: 4/6;
   }
@@ -161,20 +212,29 @@ html{
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) { } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
-/* Large screens - DESKTOP */
+/* small-medium screens - DESKTOP */
 /* min-width 1025px*/
+
 @media only screen and (min-width: 64.063em) {
+
+  /*MAIN GRID*/
+  /*SMALL-MEDIUM SCREEN REFORMAT*/
+
   .mainGrid{
     display: grid;
     grid-template-columns: 2fr 4fr 65px 2fr;
     grid-template-rows: 65px 1fr 1fr 1fr 1fr;
     grid-template-areas:
       "leftBarA hero logo navDiv"
-      "subtitle hero . ."
+      "subtitle hero . contentOne"
       "title hero . contentOne"
       "title hero . contentTwo"
       "title hero . contentTwo";
   }
+
+  /*CONTENT BLOCKS*/
+  /*MEDIUM DESKTOP*/
+
   .longContent{
     padding-right: 2vw;
     padding-left: 20px;
@@ -182,6 +242,14 @@ html{
     grid-row: 2/6;
     text-align: justify;
   }
+  .contactContent{
+    grid-column: 3/5;
+    grid-row: 2/6;
+  }
+  .contentOne, .contentTwo, .longContent{
+    font-size: .85rem;
+  }
+
   .logo{
     max-width: 50px;
     margin-left: 20px;
@@ -192,9 +260,6 @@ html{
   }
   .navDiv{
     margin-top: 3px;
-  }
-  .longContent{
-    font-size: .85rem;
   }
   .title{
     padding-left: 1rem;
@@ -214,7 +279,12 @@ html{
 
 /* XLarge screens */
 /* min-width 1441px, xlarge screens */
+
 @media only screen and (min-width: 90.063em) {
+
+  /*MAIN GRID*/
+  /*LARGE SCREEN REFORMAT*/
+
   .mainGrid{
     display: grid;
     grid-template-columns: 1fr 2fr 80px 1fr 1fr;
@@ -226,40 +296,19 @@ html{
             "title hero . contentTwo contentTwo"
             "title hero . contentTwo contentTwo";
   }
-  .hero{}
-  .logo{
-    max-width: 65px;
-    margin-left: 20px;
-    margin-right: 0;
-    margin-top: 10px;
-    padding-top: 5px;
-    box-shadow: var(--shadow-color) -5px 5px 2px -2px;
-  }
-  .title{
-    font-size: 5em;
-    overflow: hidden;
-    padding-left: 1rem;
-  }
-  .navDiv{
-    font-family: "Source Sans Pro", sans-serif;
-    margin-top: 40px;
-    padding-right: 4vw;
-  }
-  .navDiv a{
-    font-size: 1.70rem;
-  }
-  .subtitle{
-    font-size: 3em;
-    overflow: hidden;
-    padding-top: 0;
-  }
+
+  /*CONTENT BLOCKS*/
+  /*LARGE SCREEN*/
+
   .contentOne{
     padding-right: 4vw;
     padding-left: 20px;
+    font-size: 1rem;
   }
   .contentTwo{
     padding-right: 4vw;
     padding-left: 20px;
+    font-size: 1rem;
   }
   .longContent{
     margin-top: 8vw;
@@ -280,9 +329,46 @@ html{
   .longContent > p {
     padding-bottom: .5rem;
   }
+  .contactContent{
+    grid-column: 4/6;
+    grid-row: 3/6;
+  }
+  .contactContent > p {
+    margin-bottom: 1rem;
+  }
+
+  /*HEADER*/
+  /*LARGE SCREEN*/
+
+  .logo{
+    max-width: 65px;
+    margin-left: 20px;
+    margin-right: 0;
+    margin-top: 10px;
+    padding-top: 5px;
+    box-shadow: var(--shadow-color) -5px 5px 2px -2px;
+  }
+  .title{
+    font-size: 5em;
+    overflow: hidden;
+    padding-left: 1rem;
+  }
+  .navDiv{
+    margin-top: 40px;
+    padding-right: 4vw;
+  }
+  .navDiv a{
+    font-size: 1.70rem;
+  }
+
+  .subtitle{
+    overflow: hidden;
+    padding-top: 0;
+  }
   .leftBarA{
     overflow: hidden;
   }
+
   .posts{
     display: flex;
     flex-wrap: wrap;

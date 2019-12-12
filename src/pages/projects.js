@@ -36,7 +36,7 @@ const ProjectsPage = ({ data }) => (
             <div className={'hero'}>
                 <Img
                     fluid={data.desktopImage.childImageSharp.fluid}
-                    alt=""
+                    alt="sweet bluejay mural, creative and inspiring"
                 />
             </div>
 
