@@ -36,6 +36,7 @@ const IndexPage = ({ data }) => (
             <Img
             fluid={[data.desktopImage.childImageSharp.fluid]}
             alt="peaceful elk in the rockies to show home"
+            className={'heroImage'}
             />
         </div>
 

@@ -37,6 +37,7 @@ const ProjectsPage = ({ data }) => (
                 <Img
                     fluid={data.desktopImage.childImageSharp.fluid}
                     alt="sweet bluejay mural, creative and inspiring"
+                    className={'heroImage'}
                 />
             </div>
 
@@ -65,26 +66,27 @@ const ProjectsPage = ({ data }) => (
             </div>
 
             <div className={'darkBar'}></div>
-        </section>
-        <section className={'postsGrid'}>
-            <div className={'postsHeading'}>
-                <h3><u>Project Posts</u></h3>
-            </div>
-            <div className={'postsContainer'}>
-                <div className={'posts'}>
-                    {data.allWordpressPost.edges.map(({ node }) => (
-                        <div key={node.id}>
-                            <Link to={node.slug}>
-                                <div className={'contentCard'}>
-                                    <h4 className={'contentCardTitle'}>{node.title}</h4>
-                                    <div className={'contentCardExcerpt'} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
+            <section className={'postsGrid'}>
+                <div className={'postsHeading'}>
+                    <h3><u>Project Posts</u></h3>
                 </div>
-            </div>
+                <div className={'postsContainer'}>
+                    <div className={'posts'}>
+                        {data.allWordpressPost.edges.map(({ node }) => (
+                            <div key={node.id}>
+                                <Link to={node.slug}>
+                                    <div className={'contentCard'}>
+                                        <h4 className={'contentCardTitle'}>{node.title}</h4>
+                                        <div className={'contentCardExcerpt'} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                                    </div>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </section>
+
     </Layout>
 )
 

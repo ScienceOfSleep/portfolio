@@ -40,6 +40,7 @@ const ContactPage = ({ data }) => (
                 <Img
                     fluid={data.desktopImage.childImageSharp.fluid}
                     alt="contact page transit station"
+                    className={'heroImage'}
                 />
             </div>
 

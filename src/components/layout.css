@@ -13,6 +13,12 @@
 }
 html{
   background-color: var(--main-bg-color);
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
 }
 
 /*HEADER BLOCKS*/
@@ -120,7 +126,8 @@ html{
     "title title title"
     "contentOne contentOne contentOne"
     "contentTwo contentTwo contentTwo"
-    ". logo .";
+    ". logo ."
+    "postsGrid postsGrid postsGrid";
 }
 
 /*POST CARD INDEX GRID*/
@@ -133,6 +140,7 @@ html{
   grid-area: posts;
 }
 .postsGrid{
+  grid-area: postsGrid;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: 80px auto;
@@ -180,7 +188,8 @@ html{
       "hero hero hero hero"
       "subtitle subtitle title title"
       "contentOne contentOne contentOne contentOne"
-      "contentTwo contentTwo contentTwo contentTwo";
+      "contentTwo contentTwo contentTwo contentTwo"
+      "postsGrid postsGrid postsGrid postsGrid";
   }
   .longContent{
     grid-column: 1/5;
@@ -217,19 +226,20 @@ html{
 
 @media only screen and (min-width: 64.063em) {
 
-  /*MAIN GRID*/
-  /*SMALL-MEDIUM SCREEN REFORMAT*/
+  /*!*MAIN GRID*!*/
+  /*!*SMALL-MEDIUM SCREEN REFORMAT*!*/
 
   .mainGrid{
     display: grid;
     grid-template-columns: 2fr 4fr 65px 2fr;
-    grid-template-rows: 65px 1fr 1fr 1fr 1fr;
+    grid-template-rows: 65px 1fr 1fr 1fr 1fr auto;
     grid-template-areas:
       "leftBarA hero logo navDiv"
       "subtitle hero . contentOne"
       "title hero . contentOne"
       "title hero . contentTwo"
-      "title hero . contentTwo";
+      "title hero . contentTwo"
+      "title . postsGrid postsGrid";
   }
 
   /*CONTENT BLOCKS*/
@@ -246,7 +256,7 @@ html{
     grid-column: 3/5;
     grid-row: 2/6;
   }
-  .contentOne, .contentTwo, .longContent{
+  .contentOne, .contentTwo, .longContent, .postsGrid{
     font-size: .85rem;
   }
 
@@ -270,7 +280,17 @@ html{
     font-size: 3rem;
   }
   .hero{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    width: auto;
     background-color: var(--shadow-color);
+
+  }
+  .heroImage{
+    height: 100vh;
+    width: auto;
   }
 }
 
@@ -288,13 +308,15 @@ html{
   .mainGrid{
     display: grid;
     grid-template-columns: 1fr 2fr 80px 1fr 1fr;
-    grid-template-rows: 80px 1fr 1fr 1fr 1fr;
+    /*grid-template-rows: 80px repeat(4, calc((100vh - 80px) / 4));*/
+    grid-template-rows: 80px 1fr 1fr 1fr 1fr auto;
     grid-template-areas:
             "leftBarA hero logo navDiv navDiv"
             "leftBarA hero . . ."
             "subtitle hero . contentOne contentOne"
             "title hero . contentTwo contentTwo"
-            "title hero . contentTwo contentTwo";
+            "title hero . contentTwo contentTwo"
+            "title . . postsGrid postsGrid"
   }
 
   /*CONTENT BLOCKS*/
@@ -336,6 +358,19 @@ html{
   .contactContent > p {
     margin-bottom: 1rem;
   }
+  .posts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contentCard{
+    max-width: 40vw;
+  }
+  .postsGrid{
+    grid-column: 4/6;
+    grid-row: 6/7;
+    font-size: 1rem;
+  }
 
   /*HEADER*/
   /*LARGE SCREEN*/
@@ -348,11 +383,6 @@ html{
     padding-top: 5px;
     box-shadow: var(--shadow-color) -5px 5px 2px -2px;
   }
-  .title{
-    font-size: 5em;
-    overflow: hidden;
-    padding-left: 1rem;
-  }
   .navDiv{
     margin-top: 40px;
     padding-right: 4vw;
@@ -361,21 +391,31 @@ html{
     font-size: 1.70rem;
   }
 
+  /*TITLE BLOCKS*/
+  /*LARGE SCREEN*/
+
+  .hero{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    width: auto;
+  }
+  .heroImage {
+    height: 100vh;
+    width: auto;
+  }
+  .title{
+    font-size: 5em;
+    overflow: hidden;
+    padding-left: 1rem;
+  }
   .subtitle{
     overflow: hidden;
     padding-top: 0;
   }
   .leftBarA{
     overflow: hidden;
-  }
-
-  .posts{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .contentCard{
-    max-width: 40vw;
   }
 }
 
@@ -597,7 +637,7 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0rem;
 }
 h1 {
   font-family: "Source Sans Pro", sans-serif;
