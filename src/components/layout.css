@@ -326,11 +326,13 @@ body{
     padding-right: 4vw;
     padding-left: 20px;
     font-size: 1rem;
+    text-align-last: right;
   }
   .contentTwo{
     padding-right: 4vw;
     padding-left: 20px;
     font-size: 1rem;
+    text-align-last: right;
   }
   .longContent{
     margin-top: 8vw;
@@ -339,6 +341,7 @@ body{
     grid-column: 4/6;
     grid-row: 2/6;
     font-size: 1rem;
+    text-align-last: right;
   }
   .contentOne > h4, .contentTwo > h4 {
     text-align: right;
