@@ -11,7 +11,7 @@ export default ({ data }) => {
         <Layout>
             {data.allWordpressPost.edges.map(({ node }) =>
                 <div className={'mainGrid'} key={node.id}>
-                    <SEO title="{node.title}" />
+                    <SEO title={node.title} description={node.content} />
                     <div className={'navDiv'}>
                         <NavBar/>
                     </div>

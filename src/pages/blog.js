@@ -9,7 +9,10 @@ import NavBar from "../components/navbar";
 
 const BlogPage = ({ data }) => (
     <Layout>
-        <SEO title="Blog" />
+        <SEO
+            title="Blog"
+            description={"Idea board for concepts in tech, strategy, and food."}
+        />
         <section className={'mainGrid'}>
 
             <div className={'logo'}>

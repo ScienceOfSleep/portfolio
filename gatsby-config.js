@@ -5,6 +5,7 @@ module.exports = {
     title: `Josh Steele`,
     description: `Josh Steele's portfolio site. Built with Gatsby and React`,
     author: `Josh Steele`,
+    url: "https://www.jjsteele.ca",
   },
   plugins: [    {
     resolve: `gatsby-source-wordpress`,

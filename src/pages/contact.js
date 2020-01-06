@@ -15,7 +15,7 @@ import Linkedin from "../images/icons/Linkedin.png"
 
 const ContactPage = ({ data }) => (
     <Layout>
-        <SEO title="Contact" />
+        <SEO title="Contact" description={"Get in touch with me via eMail or on social media!"}/>
         <section className={'mainGrid'}>
 
 \            <div className={'logo'}>

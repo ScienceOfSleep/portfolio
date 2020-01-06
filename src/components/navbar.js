@@ -18,7 +18,7 @@ const ListLink = props => (
 )
 
 const NavBar = () => (
-    <div style={{
+    <nav style={{
         display:'flex',
         justifyContent:'flex-end',
     }}>
@@ -30,7 +30,7 @@ const NavBar = () => (
                 <ListLink to="/contact">Contact</ListLink>
             </ul>
         </h3>
-    </div>
+    </nav>
 )
 
 export default NavBar

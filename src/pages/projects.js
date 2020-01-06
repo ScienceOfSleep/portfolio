@@ -9,7 +9,10 @@ import NavBar from "../components/navbar";
 
 const ProjectsPage = ({ data }) => (
     <Layout>
-        <SEO title="Projects" />
+        <SEO
+            title="Projects"
+            description={"Web development and design project portfolio. Exploring new tech and its potential applications."}
+        />
         <section className={'mainGrid'}>
 
             {/*Row 1 Col 3*/}
