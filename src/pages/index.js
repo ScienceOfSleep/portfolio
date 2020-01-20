@@ -11,27 +11,22 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" />
     <section className={'mainGrid'}>
 
-        {/*Row 1 Col 3*/}
         <div className={'logo'}>
             <Logo/>
         </div>
 
-        {/*Row 1 Col 4-6*/}
         <div className={'navDiv'}>
             <NavBar/>
         </div>
 
-        {/*Row 3 Col 1*/}
         <div className={'subtitle'}>
             <h2>Albertan Web Design</h2>
         </div>
 
-        {/*Row 4 Col 1*/}
         <div className={'title'}>
             <h1><b>By Josh Steele</b></h1>
         </div>
 
-        {/*Row 1-6 Col 2*/}
         <div className={'hero'}>
             <Img
             fluid={[data.desktopImage.childImageSharp.fluid]}
@@ -40,7 +35,6 @@ const IndexPage = ({ data }) => (
             />
         </div>
 
-        {/*Row 3 Col 4-6*/}
         <div className={'longContent'}>
             <h4>Hi. Welcome to my portfolio site.</h4>
             <p> This is an area where I showcase my work, personality, tastes,
@@ -53,10 +47,7 @@ const IndexPage = ({ data }) => (
                 CSS grid. Gatsby handles the back-end for CMS and simple API work, while I work with Laravel for
                 more complex projects.
             </p>
-        {/*</div>*/}
 
-        {/*/!*Row 4 Col 4-6*!/*/}
-        {/*<div className={'contentTwo'}>*/}
             <h4>The Fastest WordPress in the West</h4>
             <p>WordPress and its fellows can be a valuable tool for business, but it is also an aging technology and the websites
                 it delivers can be very slow if they are poorly designed. This sluggishness has a significant measurable impact on both exposure and conversions.
