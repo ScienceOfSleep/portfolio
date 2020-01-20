@@ -6,13 +6,14 @@ module.exports = {
     description: `Josh Steele's portfolio site. Built with Gatsby and React`,
     author: `Josh Steele`,
     url: "https://www.jjsteele.ca",
+    siteUrl: "https://www.jjsteele.ca",
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://www.jjsteele.ca',
-        // sitemap: 'https://www.example.com/sitemap.xml',
+        sitemap: 'https://www.jjsteele.ca/sitemap.xml',
         resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
@@ -24,6 +25,7 @@ module.exports = {
         }
       }
     },
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-source-wordpress`,
       options: {
