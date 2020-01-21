@@ -17,7 +17,7 @@ module.exports = {
         resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
+            policy: [{ userAgent: '*', allow: ['/'] }]
           },
           production: {
             policy: [{ userAgent: '*', allow: '/' }]
