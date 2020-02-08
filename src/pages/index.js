@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => (
         </div>
 
         <div className={'subtitle'}>
-            <h2>Albertan Web Design</h2>
+            <h2>Modern Web Design</h2>
         </div>
 
         <div className={'title'}>
