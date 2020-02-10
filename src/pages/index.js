@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => (
         </div>
 
         <div className={'longContent'}>
-            <h4>Hi. Welcome to my portfolio site.</h4>
+            <h4>Hi! Welcome to my portfolio site.</h4>
             <p> This is an area where I showcase my work, personality, tastes,
                 and opinions for potential employers, clients, and the occasional interested friend.
                 Keeping this site up to date also serves as an opportunity for reflection and eventually a venue for personal growth
