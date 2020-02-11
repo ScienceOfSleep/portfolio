@@ -9,6 +9,7 @@ module.exports = {
     siteUrl: "https://www.jjsteele.ca",
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

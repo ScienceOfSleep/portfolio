@@ -6,15 +6,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Logo from "../components/logo"
 import NavBar from "../components/navbar"
+import MainGrid from "../components/maingrid"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
-    <section className={'mainGrid'}>
+    <SEO title="Home" description={"A showcase of my work, tastes, and opinions for employers, clients, and the odd friend."}/>
+    <MainGrid>
 
-        <div className={'logo'}>
-            <Logo/>
-        </div>
+        <Logo/>
 
         <div className={'navDiv'}>
             <NavBar/>
@@ -37,9 +36,9 @@ const IndexPage = ({ data }) => (
         </div>
 
         <div className={'longContent'}>
-            <h4>Hi! Welcome to my portfolio site.</h4>
+            <h4>Hi. Welcome to my portfolio site.</h4>
             <p> This is an area where I showcase my work, personality, tastes,
-                and opinions for potential employers, clients, and the occasional interested friend.
+                and opinions for potential employers, clients, and the odd friend.
                 Keeping this site up to date also serves as an opportunity for reflection and eventually a venue for personal growth
             </p>
             <p>
@@ -60,7 +59,7 @@ const IndexPage = ({ data }) => (
         </div>
 
         <div className={'darkBar'}></div>
-    </section>
+    </MainGrid>
   </Layout>
 )
 
