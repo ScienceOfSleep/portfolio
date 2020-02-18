@@ -38,7 +38,6 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     })
 
-    console.log(JSON.stringify(result, null, 4))
 }
 
 // You can delete this file if you're not using it
