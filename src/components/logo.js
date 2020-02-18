@@ -27,17 +27,34 @@ const Logo = () => {
         }
     `)
 
-    return <Img
-        fluid={data.placeholderImage.childImageSharp.fluid}
-        className={"logo"}
+    return <div
         css={css`
-            grid-area: logo;
-            max-width: 50px;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            box-shadow: var(--shadow-color) 3px 3px;
+              grid-area: logo;
+              width: 60px;
+              margin-bottom: 1rem;
+              margin-top: 1rem;
+              @media only screen and (min-width: 40.063em) {
+              margin-left: 1rem;
+              }
+              @media only screen and (min-width: 64.063em) {
+              margin-left: 17px;
+              margin-top: 17px;
+              margin-bottom: 0;
+              }
         `}
-    />
+    >
+        <Img
+            fluid={data.placeholderImage.childImageSharp.fluid}
+            className={"logo"}
+            css={css`
+                grid-area: logo;
+                box-shadow: var(--shadow-color) 3px 3px;
+                @media only screen and (min-width: 64.063em) {
+                  box-shadow: var(--shadow-color) -5px 5px 2px -2px;
+                }
+            `}
+        />
+    </div>
 }
 
 export default Logo

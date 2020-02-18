@@ -7,10 +7,8 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import { Global, css } from "@emotion/core";
 import useSiteMetadata from "../hooks/use-sitemetadata";
-
 
 const Layout = ({ children }) => {
   const { title, description, author } = useSiteMetadata();
@@ -32,9 +30,6 @@ const Layout = ({ children }) => {
           box-sizing: border-box;
           margin: 0;
           }
-          * + *{
-          margin-top: 1rem;
-          }
         html,
         body{
           margin: 0;
@@ -49,13 +44,36 @@ const Layout = ({ children }) => {
         > div{
         margin-top: 0;
         }
+        p{
+        font-size: 1.1em;
+        font-family: "Crimson Text", serif;
+        color: var(--font);
+        }
+        h1,
+        h2{
+          font-family: 'Raleway', sans-serif;
+          font-size: 2em;
+          font-weight: normal;
+          color: var(--light-font);
+        }
+        h3{
+          font-size: 1.25em;
+          font-family: 'Ubuntu', sans-serif;
+          font-weight: normal;
+          color: var(--strong-font);
+        }
+        h4{
+          font-family: 'Fjalla One', sans-serif;
+          font-size: 1em;
+          font-weight: normal;
+          color: var(--strong-font);
+        }
         h1,
         h2,
         h3,
         h4,
         h5,
         h6{
-        color: var(--strong-font);
         line-height: 1.1;
         + * {
         margin-top: 0.5rem;
@@ -66,6 +84,12 @@ const Layout = ({ children }) => {
         }
         li{
         margin-top: 0.25rem;
+        }
+        @media only screen and (min-width: 64.063em) {
+          h1,
+          h2{
+          font-size: 4em;
+          }
         }
 
 
