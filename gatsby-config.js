@@ -9,6 +9,7 @@ module.exports = {
     siteUrl: "https://www.jjsteele.ca",
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -72,12 +73,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Source Sans Pro', 'Lato']
-        }
-      }
+      resolve: `gatsby-plugin-google-fonts`,
+        options: {
+          fonts: [
+            `Fjalla One`,
+            `Raleway`,
+            `Ubuntu`,
+            `Crimson Text`
+          ],
+          display: 'swap'
+        },
     },
     {
       resolve: `gatsby-plugin-manifest`,

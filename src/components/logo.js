@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { css } from "@emotion/core"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -26,7 +27,34 @@ const Logo = () => {
         }
     `)
 
-    return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+    return <div
+        css={css`
+              grid-area: logo;
+              width: 60px;
+              margin-bottom: 1rem;
+              margin-top: 1rem;
+              @media only screen and (min-width: 40.063em) {
+              margin-left: 1rem;
+              }
+              @media only screen and (min-width: 64.063em) {
+              margin-left: 17px;
+              margin-top: 17px;
+              margin-bottom: 0;
+              }
+        `}
+    >
+        <Img
+            fluid={data.placeholderImage.childImageSharp.fluid}
+            className={"logo"}
+            css={css`
+                grid-area: logo;
+                box-shadow: var(--shadow-color) 3px 3px;
+                @media only screen and (min-width: 64.063em) {
+                  box-shadow: var(--shadow-color) -5px 5px 2px -2px;
+                }
+            `}
+        />
+    </div>
 }
 
 export default Logo

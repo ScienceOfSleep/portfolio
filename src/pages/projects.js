@@ -1,51 +1,53 @@
 import React from "react"
 import {Link, graphql} from "gatsby";
+import {css} from "@emotion/core";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image";
 import Logo from "../components/logo";
 import NavBar from "../components/navbar";
+import MainGrid from "../components/maingrid";
+import TitleSection from "../components/titlesection";
+import PostsGrid from "../components/postsgrid";
+import ContentCard from "../components/contentcard";
+import SkinnyHero from "../components/skinnyhero";
+
 
 const ProjectsPage = ({ data }) => (
     <Layout>
+        <MainGrid>
         <SEO
             title="Projects"
             description={"Web development and design project portfolio. Exploring new tech and its potential applications."}
         />
-        <section className={'mainGrid'}>
 
-            {/*Row 1 Col 3*/}
-            <div className={'logo'}>
-                <Logo/>
-            </div>
+            <Logo/>
 
-            {/*Row 1 Col 4-6*/}
-            <div className={'navDiv'}>
-                <NavBar/>
-            </div>
+            <NavBar/>
 
-            {/*Row 3 Col 1*/}
-            <div className={'subtitle'}>
-                <h2>Tech Project Portfolio</h2>
-            </div>
+            <TitleSection>
+                <h1>Tech Project Portfolio</h1>
+                <h2>By Josh Steele</h2>
+            </TitleSection>
 
-            {/*Row 4 Col 1*/}
-            <div className={'title'}>
-                <h1>By Josh Steele</h1>
-            </div>
+            <SkinnyHero
+                fluid={data.desktopImage.childImageSharp.fluid}
+                alt="sweet bluejay mural, creative and inspiring"
+            />
 
-            {/*Row 1-6 Col 2*/}
-            <div className={'hero'}>
-                <Img
-                    fluid={data.desktopImage.childImageSharp.fluid}
-                    alt="sweet bluejay mural, creative and inspiring"
-                    className={'heroImage'}
-                />
-            </div>
-
-            {/*Row 3 Col 4-6*/}
-            <div className={'contentOne'}>
+            <section
+                css={css`
+                  grid-area: mainCopy;
+                  padding-right: 1rem;
+                  padding-left: 1rem;
+                  padding-bottom: 1rem;
+                  align-self: center;
+                  @media only screen and (min-width: 64.063em) {
+                  padding-right: 4rem;
+                  padding-left: 0;
+                  }
+                `}
+            >
                 <h4>Welcome to my portfolio site.</h4>
                 <p>
                     Working with the WordPress API, these project posts and blog posts are
@@ -57,39 +59,42 @@ const ProjectsPage = ({ data }) => (
                     CSS grid. Gatsby handles the back-end for CMS and simple API work, while I work with Laravel for
                     more complex projects.
                 </p>
-            </div>
 
-            {/*Row 4 Col 4-6*/}
-            <div className={'contentTwo'}>
                 <p>The project posts below serve three purposes for me. First as an extended Readme
                     and documentation of the development process. Second as a catalogue for
                     concepts and next-steps to refine projects. Third, they let me practice
                     breaking down abstract or complex programming concepts into a story that
                     is understandable or at least relatable to a layperson.</p>
-            </div>
-
-            <div className={'darkBar'}></div>
-            <section className={'postsGrid'}>
-                <div className={'postsHeading'}>
-                    <h3><u>Project Posts</u></h3>
-                </div>
-                <div className={'postsContainer'}>
-                    <div className={'posts'}>
-                        {data.allWordpressPost.edges.map(({ node }) => (
-                            <div key={node.id}>
-                                <Link to={node.slug}>
-                                    <div className={'contentCard'}>
-                                        <h4 className={'contentCardTitle'}>{node.title}</h4>
-                                        <div className={'contentCardExcerpt'} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                                    </div>
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
-                </div>
             </section>
-        </section>
 
+            <PostsGrid>
+                <h3 css={css`grid-area: postsHeading`}>
+                    <u>Project Posts</u>
+                </h3>
+                <section css={css`grid-area: posts`}>
+                    {data.allWordpressPost.edges.map(({ node }) => (
+                        <div key={node.id}>
+                            <Link
+                                to={node.slug}
+                                css={css`text-decoration: none`}
+                            >
+                                <ContentCard>
+                                    <h4
+                                        css={css`
+                                            grid-area: cardTitle;
+                                            font-size: 1.1em;
+                                        `}>
+                                        {node.title}
+                                    </h4>
+                                    <p css={css`grid-area: cardExcerpt`} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                                </ContentCard>
+                            </Link>
+                        </div>
+                    ))}
+                </section>
+            </PostsGrid>
+
+        </MainGrid>
     </Layout>
 )
 

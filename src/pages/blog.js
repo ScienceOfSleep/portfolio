@@ -1,11 +1,16 @@
 import React from "react"
 import {Link, graphql} from "gatsby";
+import {css} from "@emotion/core"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image";
 import Logo from "../components/logo";
 import NavBar from "../components/navbar";
+import MainGrid from "../components/maingrid";
+import TitleSection from "../components/titlesection";
+import PostsGrid from "../components/postsgrid";
+import ContentCard from "../components/contentcard";
+import SkinnyHero from "../components/skinnyhero";
 
 const BlogPage = ({ data }) => (
     <Layout>
@@ -13,35 +18,35 @@ const BlogPage = ({ data }) => (
             title="Blog"
             description={"Idea board for concepts in tech, strategy, and food."}
         />
-        <section className={'mainGrid'}>
+        <MainGrid>
 
-            <div className={'logo'}>
-                <Logo/>
-            </div>
+            <Logo/>
 
-            <div className={'navDiv'}>
-                <NavBar/>
-            </div>
+            <NavBar/>
 
-            <div className={'subtitle'}
-                 style={{backgroundColor: '#1C1718'}}>
-                <h2>Blog Page</h2>
-            </div>
+            <TitleSection>
+                <h1>Blog Page</h1>
+                <h2>By Josh Steele</h2>
+            </TitleSection>
 
-            <div className={'title'}
-                 style={{backgroundColor: '#1C1718'}}>
-                <h1>By Josh Steele</h1>
-            </div>
+            <SkinnyHero
+                fluid={data.desktopImage.childImageSharp.fluid}
+                alt="Blog page mountain inspo shot"
+            />
 
-            <div className={'hero'}>
-                <Img
-                    fluid={data.desktopImage.childImageSharp.fluid}
-                    alt="blog page cool activity demo"
-                    className={'heroImage'}
-                />
-            </div>
-
-            <div className={'longContent'}>
+            <section
+                css={css`
+                  grid-area: mainCopy;
+                  padding-right: 1rem;
+                  padding-left: 1rem;
+                  padding-bottom: 1rem;
+                  align-self: center;
+                  @media only screen and (min-width: 64.063em) {
+                  padding-right: 4rem;
+                  padding-left: 0;
+                  }
+                `}
+            >
                 <h4>What & Why</h4>
                 <p>The prospect of writing and maintaining a blog has always seemed tedious to me. I've always been more of
                     a collector than a creator. The post below changed my mind on the topic, and really opened my eyes
@@ -62,31 +67,38 @@ const BlogPage = ({ data }) => (
                     It’s a place for writing and thinking, and ambiguity is okay there, even an essential part of it.
                     That’s actually increasingly rare in our digital world now, and I personally value that a lot."</i>
                 </p>
-                <h4>-Khoi Vinh, 2019</h4>
-            </div>
-
-            <div className={'darkBar'}></div>
-
-            <section className={'postsGrid'}>
-                <div className={'postsHeading'}>
-                    <h3><u>Blog Posts</u></h3>
-                </div>
-                <div className={'postsContainer'}>
-                    <div className={'posts'}>
-                        {data.allWordpressPost.edges.map(({ node }) => (
-                            <div key={node.id}>
-                                <Link to={node.slug}>
-                                    <div className={'contentCard'}>
-                                        <h4 className={'contentCardTitle'}>{node.title}</h4>
-                                        <div className={'contentCardExcerpt'} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                                    </div>
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <h4 css={css`margin-top: 0.5rem`}>
+                    -Khoi Vinh, 2019
+                </h4>
             </section>
-        </section>
+
+            <PostsGrid>
+                <h3 css={css`grid-area: postsHeading`}>
+                    <u>Blog Posts</u>
+                </h3>
+                <section css={css`grid-area: posts`}>
+                    {data.allWordpressPost.edges.map(({ node }) => (
+                        <div key={node.id}>
+                            <Link
+                                to={node.slug}
+                                css={css`text-decoration: none`}
+                            >
+                                <ContentCard>
+                                    <h4
+                                        css={css`
+                                            grid-area: cardTitle;
+                                            font-size: 1.1em;
+                                        `}>
+                                        {node.title}
+                                    </h4>
+                                    <p css={css`grid-area: cardExcerpt`} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                                </ContentCard>
+                            </Link>
+                        </div>
+                    ))}
+                </section>
+            </PostsGrid>
+        </MainGrid>
     </Layout>
 )
 
