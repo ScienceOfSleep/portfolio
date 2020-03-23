@@ -72,33 +72,49 @@ const BlogPage = ({ data }) => (
                 </h4>
             </section>
 
-            <PostsGrid>
-                <h3 css={css`grid-area: postsHeading`}>
-                    <u>Blog Posts</u>
-                </h3>
-                <section css={css`grid-area: posts`}>
-                    {data.allWordpressPost.edges.map(({ node }) => (
-                        <div key={node.id}>
-                            <Link
-                                to={node.slug}
-                                css={css`text-decoration: none`}
-                            >
-                                <ContentCard>
-                                    <h4
-                                        css={css`
+        </MainGrid>
+        <section>
+            <h3 css={css`
+                      text-align: center;
+                      padding-bottom: 1rem;
+                      padding-top: 1rem;
+                    `}
+            >
+                <u>Blog Posts</u>
+            </h3>
+            <section
+                css={css`
+                      grid-area: posts;
+                      max-width: 1120px;
+                      margin: auto;
+                      display: flex;
+                      flex-wrap: wrap;
+                      justify-content: space-between;
+                      padding-bottom: 1rem;
+                    `}
+            >
+                {data.allWordpressPost.edges.map(({ node }) => (
+                    <div key={node.id}>
+                        <Link
+                            to={node.slug}
+                            css={css`text-decoration: none`}
+                        >
+                            <ContentCard>
+                                <h4
+                                    css={css`
                                             grid-area: cardTitle;
                                             font-size: 1.1em;
                                         `}>
-                                        {node.title}
-                                    </h4>
-                                    <p css={css`grid-area: cardExcerpt`} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                                </ContentCard>
-                            </Link>
-                        </div>
-                    ))}
-                </section>
-            </PostsGrid>
-        </MainGrid>
+                                    {node.title}
+                                </h4>
+                                <p css={css`grid-area: cardExcerpt`} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                            </ContentCard>
+                        </Link>
+                    </div>
+                ))}
+            </section>
+        </section>
+
     </Layout>
 )
 

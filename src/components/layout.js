@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core";
 import useSiteMetadata from "../hooks/use-sitemetadata";
+import Footer from "./footer";
 
 const Layout = ({ children }) => {
   const { title, description, author } = useSiteMetadata();
@@ -94,8 +95,8 @@ const Layout = ({ children }) => {
 
 
 `}/>
-      <main>{children}</main>
-
+        <main>{children}</main>
+        <Footer/>
     </>
   )
 }

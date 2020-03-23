@@ -49,36 +49,81 @@ const DesignPage = ({ data }) => (
                     well to other aspects of my work. PhotoShop automation is important for bulk image optimization work,
                     and some of my preferred settings for web images can be observed in my photography below</p>
             </section>
-
-            <PostsGrid>
-                <h3 css={css`grid-area: postsHeading`}>
-                    <u>Design Posts</u>
-                </h3>
-                <section css={css`grid-area: posts`}>
-                    {data.allWordpressPost.edges.map(({ node }) => (
-                        <div key={node.id}>
-                            <Link
-                                to={node.slug}
-                                css={css`text-decoration: none`}
-                            >
-                                <ContentCard>
-                                    <h4
-                                        css={css`
-                                            grid-area: cardTitle;
-                                            font-size: 1.1em;
-                                        `}>
-                                        {node.title}
-                                    </h4>
-
-                                    <img src={node.excerpt.replace(/(<([^>]+)>)/ig,"")} alt="Preview thumbnail"/>
-                                    <p css={css`grid-area: cardExcerpt`} dangerouslySetInnerHTML={{ __html: node.excerpt.string }} />
-                                </ContentCard>
-                            </Link>
-                        </div>
-                    ))}
-                </section>
-            </PostsGrid>
         </MainGrid>
+        <section>
+            <h3 css={css`
+                      text-align: center;
+                      padding-top: 2rem;
+                      padding-bottom: 2rem;
+                    `}
+            >
+                <u>Design Posts</u>
+            </h3>
+            <section
+                css={css`
+                      grid-area: posts;
+                      max-width: 1120px;
+                      margin: auto;
+                      display: flex;
+                      flex-wrap: wrap;
+                      justify-content: space-between;
+                      padding-bottom: 1rem;
+                    `}
+            >
+                {data.allWordpressPost.edges.map(({ node }) => (
+                    <article
+                        key={node.id}
+                        css={css`
+                              max-width: calc(300px + 1rem);
+                              padding: .5rem;
+                              //border: 4px solid var(--title-bg-color);
+                              border-radius: .75rem;
+                              box-shadow: var(--shadow-color) 3px 3px 3px;
+                              background-color: var(--elevated-bg-color);
+                              margin-bottom: 1rem;
+                              align-self: center;
+                              &:hover{
+                                box-shadow: var(--shadow-color) 2px 2px 3px 3px;
+                              }
+                            `}
+                    >
+                        <Link
+                            to={node.slug}
+                            css={css`text-decoration: none;`}
+                        >
+                            <section
+                                css={css`
+                                          display: grid; 
+                                          grid-template-areas:
+                                          "pic"
+                                          "heading"
+                                          ;
+                                        `}
+                            >
+                                <h4
+                                    css={css`
+                                            grid-area: heading;
+                                            font-size: 1.1em;
+                                            text-align: center;
+                                            padding: .2rem;
+                                        `}>
+                                    {node.title.replace(/[&][N][b][s][p][;]/ig, " ")}
+                                </h4>
+
+                                <img
+                                    src={node.excerpt.replace(/(<([^>]+)>)/ig,"")}
+                                    alt="Preview thumbnail"
+                                    css={css`
+                                          grid-area: pic;
+                                          width: 100%;
+                                        `}
+                                />
+                            </section>
+                        </Link>
+                    </article>
+                ))}
+            </section>
+        </section>
     </Layout>
 )
 

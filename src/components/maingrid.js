@@ -11,8 +11,7 @@ const MainGrid = styled.section`
     "title title title"
     "mainCopy mainCopy mainCopy"
     "mainCopy mainCopy mainCopy"
-    ". logo ."
-    "postsGrid postsGrid postsGrid";
+    ". logo .";
     
   @media only screen and (min-width: 40.063em) {
     grid-template-columns: 2fr 1fr 2fr 2fr;
@@ -21,8 +20,7 @@ const MainGrid = styled.section`
       "hero hero hero hero"
       "title title title title"
       "mainCopy mainCopy mainCopy mainCopy"
-      "mainCopy mainCopy mainCopy mainCopy"
-      "postsGrid postsGrid postsGrid postsGrid";
+      "mainCopy mainCopy mainCopy mainCopy";
   }
   
   @media only screen and (min-width: 64.063em) {
@@ -33,8 +31,7 @@ const MainGrid = styled.section`
       "title hero . mainCopy mainCopy"
       "title hero . mainCopy mainCopy"
       "title hero . mainCopy mainCopy"
-      "title hero . mainCopy mainCopy"
-      ". . . postsGrid postsGrid"
+      "title hero . mainCopy mainCopy";
   }
 `
 

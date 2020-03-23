@@ -52,7 +52,8 @@ const NavBar = () => (
     >
         <ul css={css`padding-left: 0`}>
             <ListLink to="/">Home</ListLink>
-            <ListLink to="/projects">Projects</ListLink>
+            <ListLink to="/projects">Web</ListLink>
+            <ListLink to="/design">Design</ListLink>
             <ListLink to="/blog">Blog</ListLink>
             <ListLink to="/contact">Contact</ListLink>
         </ul>
