@@ -1,4 +1,6 @@
-Now retired. Design was inspired by a cool Dribble shot I've since lost. It was unique but got feedback from a few sources that it managed to be bland at the same time. Lesson learned, minimalism probably isn't a great fit for what should be a tech demo. 
+Now retired. Design was inspired by a cool Behance concept board https://www.behance.net/gallery/60511787/Weather-Geolocation-App. 
+
+It was unique but got feedback from a few sources that my take managed to be bland at the same time. Lesson learned, minimalism is tough and probably isn't a great fit for what should be a tech demo. 
   
 Blog publishing didn't fit into my knowledge management system the way I'd hoped it would.
 
@@ -9,6 +11,3 @@ Finally, the copy wasn't focused on any one task. If it's a resume site then pit
 So there isn't much to keep moving forward. Was a great starter site and I learned a lot, so I'll keep this up as a record and reminder.
   
 Technologies used: Gatsby, React, GraphQL, WordPress API, Emotion CSS-in-JS
-
-The goal was to create a proof-of-concept headless CMS that doubled as a personal portfolio site and blog. Incorporating the best parts of the cutting edge of modern web-design while retaining a client friendly user interface through the WordPress API. Responsive, mobile first design which places a heavy emphasis on efficiently shipping only the necessary information to the users device.
-
